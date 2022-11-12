@@ -86,6 +86,34 @@ namespace MS_SQL
             }
 
         }
+        public void Retrivedata()
+        {
+            try
+            {
+
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("select * from Employeedata", connection);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    var id = Convert.ToInt32(sdr["Empid"]);
+                    string name = (string)sdr["Empname"];
+                    string salary = (string)sdr["Salary"];
+                    int age = (int)Convert.ToInt64(sdr["Age"]);
+
+                    Console.Write("Empid=" + id + "|" + "Empname=" + name + "|" + "Salary=" + salary + "|" + "Age=" + age);
+
+                }
+                Console.WriteLine("Record Retrived Sucessfully");
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
 
     }
 }

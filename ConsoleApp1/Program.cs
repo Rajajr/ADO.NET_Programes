@@ -15,7 +15,7 @@ namespace MS_SQL
             {
                 Console.WriteLine("Welcome To The Programe");
                 Console.WriteLine("----------------------------------------------");
-                Console.WriteLine("1:Crete a database\n2:Create a Table\n3:Insert The Records\n4:Delete particular records");
+                Console.WriteLine("1:Crete a database\n2:Create a Table\n3:Insert The Records\n4:Delete particular Records\n5:Retrieve The Records");
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("Enter the Number To Select Programe");
                
@@ -50,6 +50,10 @@ namespace MS_SQL
                         Console.WriteLine("Enter the Name First");
                         string name1 = Console.ReadLine();
                         employee.Delete(name1);
+                        break;
+
+                    case 5:
+                        employee.Retrivedata();
                         break;
 
                     default:
