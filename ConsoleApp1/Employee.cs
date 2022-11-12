@@ -33,6 +33,25 @@ namespace MS_SQL
 
         }
 
+        public SqlConnection connection = new SqlConnection(@"Data Source=RAMYA\MSSQLSERVER01;Initial Catalog=Employee;Integrated Security=true");
+        public void CreateTable()
+        {
+            try
+            {
+
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("Create Table Employeedata(Empid int identity(1,1)primary key,Empname varchar(200),Salary varchar(200),Age int)", connection);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Employee table is created successfully");
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
     }
 }
 

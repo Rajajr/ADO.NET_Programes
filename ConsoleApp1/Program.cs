@@ -13,9 +13,14 @@ namespace MS_SQL
             Employee employee = new Employee();
             while (true)
             {
-                
-                Console.WriteLine("1:Crete a database");
+                Console.WriteLine("Welcome To The Programe");
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("1:Crete a database\n2:Create a Table");
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("Enter the Number To Select Programe");
+               
                 int choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("----------------------------------------------");
 
                 switch (choice)
                 {
@@ -23,7 +28,9 @@ namespace MS_SQL
                         employee.CreateDatabase();
 
                         break;
-                    
+                    case 2:
+                        employee.CreateTable();
+                        break;
                 }
                 Console.ReadLine();
 
