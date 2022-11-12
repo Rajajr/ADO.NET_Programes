@@ -51,6 +51,23 @@ namespace MS_SQL
                 Console.WriteLine(e.Message);
             }
         }
+        public void InsertRecord(string name, string salary, int age)
+        {
+            try
+            {
+
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("Insert into Employeedata values ('" + name + "','" + salary + "','" + age + "')", connection);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Inserted Record successfully");
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
     }
 }
