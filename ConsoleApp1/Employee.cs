@@ -68,6 +68,24 @@ namespace MS_SQL
                 Console.WriteLine(e.Message);
             }
         }
+        public void Delete(string name)
+        {
+            try
+            {
+
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("delete from Employeedata where Empname='" + name + "'", connection);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Record Deleted successfully");
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
 
     }
 }

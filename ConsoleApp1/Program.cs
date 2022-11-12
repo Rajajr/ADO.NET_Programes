@@ -15,7 +15,7 @@ namespace MS_SQL
             {
                 Console.WriteLine("Welcome To The Programe");
                 Console.WriteLine("----------------------------------------------");
-                Console.WriteLine("1:Crete a database\n2:Create a Table\n3:Insert The Records");
+                Console.WriteLine("1:Crete a database\n2:Create a Table\n3:Insert The Records\n4:Delete particular records");
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("Enter the Number To Select Programe");
                
@@ -44,6 +44,12 @@ namespace MS_SQL
                         int age = Convert.ToInt32(Console.ReadLine());
 
                         employee.InsertRecord(name, salary, age);
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Enter the Name First");
+                        string name1 = Console.ReadLine();
+                        employee.Delete(name1);
                         break;
 
                     default:
