@@ -115,6 +115,24 @@ namespace MS_SQL
 
         }
 
+        public void UpdateTheData(string name,string salary)
+        {
+            try
+            {
+
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("update Employeedata set salary='"+salary+"'where Empname='"+name+"'", connection);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Record Updated Sucessfully");
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
     }
 }
 
